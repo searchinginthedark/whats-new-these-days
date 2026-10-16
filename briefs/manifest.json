@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "slug": "2026-10-16-jpcert-ai-assisted-attacks-japan-breach-wave",
+    "title": "JPCERT AI-assisted attacks Japan breach wave",
+    "opened": "2026-10-16",
+    "summary": "PIR-1: yes, but not in the alert. JPCERT/CC's alert of 8 October (JPCERT-AT-2026-0030) never mentions AI (C-001). The AI statement appears a week later, on 15 October, in a JPCERT/CC Eyes blog post by its Attack Infrastructure Investigation Team. It says JPCERT \"confirmed\" that attackers used AI to scan for known...",
+    "public_allow": [],
+    "source_sha256": "55d2c1ccc721c66d8145aa101d79eab2df491e4971e8cc296a45e76fb5929787",
+    "published": "2026-10-16T04:31:18Z",
+    "case_commit": "0cd7987"
+  }
+]
