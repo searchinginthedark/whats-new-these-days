@@ -6,7 +6,7 @@
 <title>What's New These Days</title>
 <meta name="description" content="Open-source threat intelligence briefs.">
 <style>
-:root{--bg:#ffffff;--fg:#1b1f24;--muted:#57606a;--line:#d8dee4;--link:#0b57d0}
+:root{color-scheme:light dark;--bg:#ffffff;--fg:#1b1f24;--muted:#57606a;--line:#d8dee4;--link:#0b57d0}
 @media (prefers-color-scheme:dark){:root{--bg:#0f1115;--fg:#e6e8eb;--muted:#9aa4b2;--line:#2a2f37;--link:#8ab4f8}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -20,13 +20,23 @@ li a:hover{text-decoration:underline}
 li p{margin:6px 0 0}
 .meta{color:var(--muted);font-size:.88rem}
 .empty{color:var(--muted)}
+header{display:flex;align-items:center;gap:16px;margin:0 0 28px}
+header .lede{margin:0}
+/* plate = page background, so the figure's filled plates vanish into the page */
+.vault{flex:0 0 132px;aspect-ratio:5/4;--hairline-plate:var(--bg)}
+@media (max-width:480px){.vault{flex-basis:96px}}
 footer{margin-top:40px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);padding-top:16px}
 </style>
 </head>
 <body>
 <main>
-  <h1>What's New These Days</h1>
-  <p class="lede">Threat intelligence briefs built from open sources. 1 published.</p>
+  <header>
+    <div>
+      <h1>What's New These Days</h1>
+      <p class="lede">Threat intelligence briefs built from open sources. 1 published.</p>
+    </div>
+    <div class="vault" id="vault"></div>
+  </header>
   <ul>
     <li><a href="briefs/2026-10-16-jpcert-ai-assisted-attacks-japan-breach-wave/">JPCERT AI-assisted attacks Japan breach wave</a>
       <p class="meta">Published 2026-10-16</p>
@@ -34,5 +44,9 @@ footer{margin-top:40px;color:var(--muted);font-size:.85rem;border-top:1px solid 
   </ul>
   <footer>Indicators are defanged. Briefs reflect public reporting at the time of writing and are not advice. Some analytic sections are withheld from the public edition.</footer>
 </main>
+<script type="module">
+import { vault } from "./vendor/hairline-vault.js";
+vault(document.getElementById("vault"), { play: true, label: "A vault door whose dial turns toward the pointer" });
+</script>
 </body>
 </html>
